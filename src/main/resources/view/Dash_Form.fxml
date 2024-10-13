@@ -14,16 +14,16 @@
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="84.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
          <fill>
-            <RadialGradient centerX="0.513274302524803" centerY="0.5189393939393939" focusDistance="-0.018348606354599672" radius="0.6697247793915075">
+            <RadialGradient centerX="0.5486725410528943" centerY="0.5189393939393939" focusDistance="-0.018348606354599672" radius="0.6697247793915075">
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.8899999856948853" />
+                        <Color green="0.47796958684921265" blue="0.8799999952316284" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="0.07999999821186066" blue="0.6007885932922363" />
+                        <Color red="0.09839999675750732" green="0.1959565430879593" blue="0.8199999928474426" />
                      </color>
                   </Stop>
                </stops>

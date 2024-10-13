@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerLoginFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="85.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
+         <fill>
+            <RadialGradient centerX="0.5530972944951691" centerY="0.5113636797124689" focusDistance="-0.018348606354599672" radius="0.6697247793915075">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7463170886039734" green="0.10530214756727219" blue="0.7684210538864136" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.2781052589416504" green="0.15368421375751495" blue="0.5684210658073425" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="188.0" layoutY="21.0" prefHeight="43.0" prefWidth="223.0" text="Customer Login" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtCustomerEmail" alignment="BOTTOM_CENTER" layoutX="148.0" layoutY="126.0" prefHeight="50.0" prefWidth="304.0" promptText="Email">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="txtCustomerPassword" alignment="BOTTOM_CENTER" layoutX="148.0" layoutY="226.0" prefHeight="50.0" prefWidth="304.0" promptText="Password">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton layoutX="205.0" layoutY="310.0" onAction="#btnCustomerSignInOnAction" prefHeight="58.0" prefWidth="189.0" stylesheets="@../css/Table.css" text="Sign In">
+         <styleClass>
+            <String fx:value="dashboard-colour2" />
+            <String fx:value="btn" />
+         </styleClass>
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
