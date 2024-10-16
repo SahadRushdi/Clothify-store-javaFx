@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -11,10 +12,9 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.product.GentsProductController">
+<AnchorPane prefHeight="446.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.product.GentsProductController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="83.0" stroke="BLACK" strokeType="INSIDE" width="752.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="83.0" stroke="BLACK" strokeType="INSIDE" width="837.0">
          <fill>
             <RadialGradient centerX="0.5530972944951691" centerY="0.5113636797124689" focusDistance="-0.018348606354599672" radius="0.6697247793915075">
                <stops>
@@ -32,23 +32,33 @@
             </RadialGradient>
          </fill>
       </Rectangle>
-      <Label layoutX="274.0" layoutY="22.0" prefHeight="40.0" prefWidth="203.0" text="Gents Products" textFill="WHITE">
+      <Label layoutX="317.0" layoutY="22.0" prefHeight="40.0" prefWidth="203.0" text="Gents Products" textFill="WHITE">
          <font>
             <Font name="System Bold" size="28.0" />
          </font>
       </Label>
-      <TableView fx:id="tblGentsProducts" layoutX="20.0" layoutY="136.0" prefHeight="217.0" prefWidth="712.0" stylesheets="@../css/Table.css">
+      <TableView fx:id="tblGentsProducts" layoutX="20.0" layoutY="136.0" prefHeight="218.0" prefWidth="791.0" stylesheets="@../css/Table.css">
         <columns>
           <TableColumn fx:id="colId" prefWidth="96.0" text="ID" />
-          <TableColumn fx:id="colName" prefWidth="187.20001220703125" text="Name" />
-            <TableColumn fx:id="colSize" minWidth="0.0" prefWidth="148.79998779296875" text="Size" />
-            <TableColumn fx:id="colQuantity" prefWidth="115.20001220703125" text="Quantity" />
-            <TableColumn fx:id="colPrice" prefWidth="165.60003662109375" text="Price " />
+          <TableColumn fx:id="colName" prefWidth="200.7999725341797" text="Name" />
+            <TableColumn fx:id="colSize" minWidth="0.0" prefWidth="109.60003662109375" text="Size" />
+            <TableColumn fx:id="colQuantity" prefWidth="109.5999755859375" text="Quantity" />
+            <TableColumn fx:id="colPrice" prefWidth="123.20001220703125" text="Price " />
+            <TableColumn fx:id="colSupplier" prefWidth="153.5999755859375" text="Supplier" />
         </columns>
          <styleClass>
             <String fx:value="label" />
             <String fx:value="dashboard-colour2" />
          </styleClass>
       </TableView>
+      <JFXButton layoutX="324.0" layoutY="366.0" onAction="#btnReloadOnAction" prefHeight="58.0" prefWidth="189.0" stylesheets="@../css/Table.css" text="Reload">
+         <styleClass>
+            <String fx:value="dashboard-colour2" />
+            <String fx:value="btn" />
+         </styleClass>
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
