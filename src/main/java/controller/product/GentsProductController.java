@@ -1,53 +1,38 @@
 package controller.product;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import db.DBConnection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import model.GentsProducts;
 
-import java.net.URL;
-import java.sql.*;
-import java.util.ResourceBundle;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class GentsProductController implements Initializable {
+public class GentsProductController implements GentsProductService {
 
-    @FXML
-    private TableColumn<?, ?> colId;
+    private static GentsProductController instance;
+    private GentsProductController(){}
 
-    @FXML
-    private TableColumn<?, ?> colName;
+    public static GentsProductController getInstance() {
+        return instance == null ? instance = new GentsProductController() : instance;
+    }
 
-    @FXML
-    private TableColumn<?, ?> colPrice;
-
-    @FXML
-    private TableColumn<?, ?> colQuantity;
-
-    @FXML
-    private TableColumn<?, ?> colSize;
-
-    @FXML
-    private TableColumn<?, ?> colSupplier;
-
-    @FXML
-    private TableView<?> tblGentsProducts;
-
-    @FXML
-    void btnReloadOnAction(ActionEvent event) {
+    public ObservableList<GentsProducts> getAll() {
+        ObservableList<GentsProducts> gentsProductsObservableList = FXCollections.observableArrayList();
 
 
         try {
             String SQL = "SELECT * FROM gentsproducts";
 
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/clothfystore", "root", "12345");
+            Connection connection = DBConnection.getInstance().getConnection();
+            System.out.println(connection);
+
             PreparedStatement psTm = connection.prepareStatement(SQL);
             ResultSet resultSet = psTm.executeQuery();
 
             while (resultSet.next()) {
-                System.out.println(resultSet.getString("Supplier"));
-
                 GentsProducts gentsProducts = new GentsProducts(
                         resultSet.getInt("ID"),
                         resultSet.getString("Name"),
@@ -56,16 +41,12 @@ public class GentsProductController implements Initializable {
                         resultSet.getDouble("Price"),
                         resultSet.getString("Supplier")
                 );
+                gentsProductsObservableList.add(gentsProducts);
                 System.out.println(gentsProducts);
             }
-
+            return gentsProductsObservableList;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
     }
 }
