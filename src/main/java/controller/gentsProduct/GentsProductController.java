@@ -1,4 +1,4 @@
-package controller.product;
+package controller.gentsProduct;
 
 import db.DBConnection;
 import javafx.collections.FXCollections;

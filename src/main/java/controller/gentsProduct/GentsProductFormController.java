@@ -1,4 +1,4 @@
-package controller.product;
+package controller.gentsProduct;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
