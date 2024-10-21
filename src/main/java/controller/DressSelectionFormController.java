@@ -29,7 +29,13 @@ public class DressSelectionFormController {
 
     @FXML
     void btnLadiesDressOnAction(ActionEvent event) {
-
+        Stage stage = new Stage();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/ladies_product.fxml"))));
+            stage.show();
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "ERROR : " + e);
+        }
     }
 
 }
