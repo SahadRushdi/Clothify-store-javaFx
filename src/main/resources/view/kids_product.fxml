@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,9 +12,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="439.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.kidsProduct.KidsProductFormController">
+<AnchorPane prefHeight="454.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.kidsProduct.KidsProductFormController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="83.0" stroke="BLACK" strokeType="INSIDE" width="837.0">
          <fill>
@@ -38,7 +39,7 @@
             <Font name="System Bold" size="28.0" />
          </font>
       </Label>
-      <TableView fx:id="tblKidsProducts" layoutX="22.0" layoutY="121.0" prefHeight="218.0" prefWidth="791.0" stylesheets="@../css/Table.css">
+      <TableView fx:id="tblKidsProducts" layoutX="22.0" layoutY="144.0" prefHeight="218.0" prefWidth="791.0" stylesheets="@../css/Table.css">
          <columns>
             <TableColumn fx:id="colId" prefWidth="96.0" text="ID" />
             <TableColumn fx:id="colName" prefWidth="200.7999725341797" text="Name" />
@@ -52,7 +53,7 @@
             <String fx:value="dashboard-colour2" />
          </styleClass>
       </TableView>
-      <JFXButton layoutX="323.0" layoutY="365.0" onAction="#btnReloadOnAction" prefHeight="58.0" prefWidth="189.0" stylesheets="@../css/Table.css" text="Reload">
+      <JFXButton layoutX="329.0" layoutY="381.0" onAction="#btnReloadOnAction" prefHeight="58.0" prefWidth="189.0" stylesheets="@../css/Table.css" text="Reload">
          <styleClass>
             <String fx:value="dashboard-colour2" />
             <String fx:value="btn" />
@@ -61,5 +62,26 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </JFXButton>
+      <Text layoutX="65.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="93.9156494140625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblDate" layoutX="159.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2020-09-11" wrappingWidth="119.515625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="498.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time :" wrappingWidth="93.9156494140625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblTime" layoutX="592.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="09:35:09" wrappingWidth="119.515625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Separator layoutX="410.0" layoutY="94.0" orientation="VERTICAL" prefHeight="40.0" prefWidth="32.0" />
    </children>
 </AnchorPane>

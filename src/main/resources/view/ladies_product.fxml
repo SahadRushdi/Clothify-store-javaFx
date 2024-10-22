@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,10 +12,11 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="453.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ladiesProduct.LadiesProductFormController">
    <children>
-      <TableView fx:id="tblLadiesProducts" layoutX="20.0" layoutY="128.0" prefHeight="218.0" prefWidth="791.0" stylesheets="@../css/Table.css">
+      <TableView fx:id="tblLadiesProducts" layoutX="20.0" layoutY="147.0" prefHeight="218.0" prefWidth="791.0" stylesheets="@../css/Table.css">
          <columns>
             <TableColumn fx:id="colId" prefWidth="96.0" text="ID" />
             <TableColumn fx:id="colName" prefWidth="200.7999725341797" text="Name" />
@@ -51,7 +53,7 @@
             <Font name="System Bold" size="28.0" />
          </font>
       </Label>
-      <JFXButton layoutX="324.0" layoutY="374.0" onAction="#btnReloadOnAction" prefHeight="58.0" prefWidth="189.0" stylesheets="@../css/Table.css" text="Reload">
+      <JFXButton layoutX="324.0" layoutY="379.0" onAction="#btnReloadOnAction" prefHeight="58.0" prefWidth="189.0" stylesheets="@../css/Table.css" text="Reload">
          <styleClass>
             <String fx:value="dashboard-colour2" />
             <String fx:value="btn" />
@@ -60,5 +62,26 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </JFXButton>
+      <Text layoutX="63.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="93.9156494140625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblDate" layoutX="157.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2020-09-11" wrappingWidth="119.515625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="496.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time :" wrappingWidth="93.9156494140625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblTime" layoutX="590.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="09:35:09" wrappingWidth="119.515625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Separator layoutX="408.0" layoutY="93.0" orientation="VERTICAL" prefHeight="40.0" prefWidth="32.0" />
    </children>
 </AnchorPane>
