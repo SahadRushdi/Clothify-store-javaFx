@@ -24,7 +24,13 @@ public class DressSelectionFormAdminController {
 
     @FXML
     void btnKidsProductsOnAction(ActionEvent event) {
-
+        Stage stage = new Stage();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/admin/kids_product_admin.fxml"))));
+            stage.show();
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "ERROR : " + e);
+        }
     }
 
     @FXML
