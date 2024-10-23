@@ -9,13 +9,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class DashFormController {
+public class DressSelectionFormAdminController {
 
     @FXML
-    void btnAdminLoginOnAction(ActionEvent event) {
+    void btnGentsProductsOnAction(ActionEvent event) {
         Stage stage = new Stage();
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/admin/dress_selection_admin.fxml"))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/admin/gents_product_admin.fxml"))));
             stage.show();
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.WARNING, "ERROR : " + e);
@@ -23,10 +23,15 @@ public class DashFormController {
     }
 
     @FXML
-    void btnCustomerLoginOnAction(ActionEvent event) {
+    void btnKidsProductsOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnLadiesProductsOnAction(ActionEvent event) {
         Stage stage = new Stage();
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/customer_login.fxml"))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/admin/ladies_product_admin.fxml"))));
             stage.show();
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.WARNING, "ERROR : " + e);

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="656.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gentsProductAdmin.GentsProductAdminFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="83.0" stroke="BLACK" strokeType="INSIDE" width="830.0">
+         <fill>
+            <RadialGradient centerX="0.5530972944951691" centerY="0.5113636797124689" focusDistance="-0.018348606354599672" radius="0.6697247793915075">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.6011132001876831" green="0.09759999811649323" blue="0.6100000143051147" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.1719921976327896" green="0.06074073910713196" blue="0.43157893419265747" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="278.0" layoutY="22.0" prefHeight="40.0" prefWidth="308.0" text="Gents Products Admin " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblGentsProductsAdmin" layoutX="20.0" layoutY="342.0" prefHeight="218.0" prefWidth="791.0" stylesheets="@../../css/Table.css">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="96.0" text="ID" />
+            <TableColumn fx:id="colName" prefWidth="200.7999725341797" text="Name" />
+            <TableColumn fx:id="colSize" minWidth="0.0" prefWidth="109.60003662109375" text="Size" />
+            <TableColumn fx:id="colQuantity" prefWidth="109.5999755859375" text="Quantity" />
+            <TableColumn fx:id="colPrice" prefWidth="123.20001220703125" text="Price " />
+            <TableColumn fx:id="colSupplier" prefWidth="153.5999755859375" text="Supplier" />
+         </columns>
+         <styleClass>
+            <String fx:value="label" />
+            <String fx:value="dashboard-colour2" />
+         </styleClass>
+      </TableView>
+      <JFXButton layoutX="321.0" layoutY="578.0" onAction="#btnReloadOnAction" prefHeight="58.0" prefWidth="189.0" stylesheets="@../../css/Table.css" text="Reload">
+         <styleClass>
+            <String fx:value="dashboard-colour2" />
+            <String fx:value="btn" />
+         </styleClass>
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <Text layoutX="55.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="93.9156494140625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblDate" layoutX="149.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2020-09-11" wrappingWidth="119.515625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="488.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time :" wrappingWidth="93.9156494140625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblTime" layoutX="582.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="09:35:09" wrappingWidth="119.515625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Separator layoutX="400.0" layoutY="93.0" orientation="VERTICAL" prefHeight="40.0" prefWidth="32.0" />
+      <JFXTextField fx:id="txtId" alignment="BOTTOM_CENTER" layoutX="36.0" layoutY="148.0" prefHeight="38.0" prefWidth="188.0" promptText="ID">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtName" alignment="BOTTOM_CENTER" layoutX="321.0" layoutY="148.0" prefHeight="38.0" prefWidth="188.0" promptText="Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtQuantity" alignment="BOTTOM_CENTER" layoutX="36.0" layoutY="204.0" prefHeight="38.0" prefWidth="188.0" promptText="Quantity">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtSize" alignment="BOTTOM_CENTER" layoutX="601.0" layoutY="148.0" prefHeight="38.0" prefWidth="188.0" promptText="Size">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPrice" alignment="BOTTOM_CENTER" layoutX="322.0" layoutY="204.0" prefHeight="38.0" prefWidth="188.0" promptText="Price">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtSupplier" alignment="BOTTOM_CENTER" layoutX="601.0" layoutY="204.0" prefHeight="38.0" prefWidth="188.0" promptText="Supplier">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton buttonType="RAISED" layoutX="600.0" layoutY="281.0" onAction="#btnSearchOnAction" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #ffd32a;" stylesheets="@../../../../../../Thogakade-MVN-2024-08-12/src/main/resources/css/Table.css" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <styleClass>
+            <String fx:value="dashboard-colour2" />
+            <String fx:value="btn" />
+         </styleClass>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="453.0" layoutY="281.0" onAction="#btnDeleteOnAction" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #f53b57;" stylesheets="@../../../../../../Thogakade-MVN-2024-08-12/src/main/resources/css/Table.css" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <styleClass>
+            <String fx:value="dashboard-colour2" />
+            <String fx:value="btn" />
+         </styleClass>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="297.0" layoutY="281.0" onAction="#btnUpdateOnAction" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #0fbcf9;" stylesheets="@../../../../../../Thogakade-MVN-2024-08-12/src/main/resources/css/Table.css" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <styleClass>
+            <String fx:value="dashboard-colour2" />
+            <String fx:value="btn" />
+         </styleClass>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="133.0" layoutY="281.0" onAction="#btnAddOnAction" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #26de81;" stylesheets="@../../../../../../Thogakade-MVN-2024-08-12/src/main/resources/css/Table.css" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <styleClass>
+            <String fx:value="dashboard-colour2" />
+            <String fx:value="btn" />
+         </styleClass>
+      </JFXButton>
+   </children>
+</AnchorPane>
