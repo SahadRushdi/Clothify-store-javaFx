@@ -122,6 +122,15 @@ public class GentsProductAdminFormController implements Initializable {
         tblGentsProductsAdmin.setItems(gentsProductsObservableList);
     }
 
+    private void setTextToValue(GentsProducts newValue) {
+        txtId.setText(String.valueOf(newValue.getID()));
+        txtName.setText(newValue.getName());
+        txtPrice.setText(Double.toString(newValue.getPrice()));
+        txtQuantity.setText(Integer.toString(newValue.getQuantity()));
+        txtSize.setText(newValue.getSize());
+        txtSupplier.setText(newValue.getSupplier());
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadDateAndTime();
@@ -134,7 +143,7 @@ public class GentsProductAdminFormController implements Initializable {
         colSupplier.setCellValueFactory(new PropertyValueFactory<>("supplier"));
 
         tblGentsProductsAdmin.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldValue, newValue) -> {
-            // TODO: Implement product details view
+            setTextToValue(newValue);
         }));
         loadTables();
 

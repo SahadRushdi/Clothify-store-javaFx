@@ -13,6 +13,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
+import model.GentsProducts;
 import model.LadiesProduct;
 
 import java.net.URL;
@@ -122,6 +123,15 @@ public class LadiesProductAdminFormController implements Initializable {
         timeline.play();
     }
 
+    private void setTextToValue(LadiesProduct newValue) {
+        txtId.setText(String.valueOf(newValue.getID()));
+        txtName.setText(newValue.getName());
+        txtPrice.setText(Double.toString(newValue.getPrice()));
+        txtQuantity.setText(Integer.toString(newValue.getQuantity()));
+        txtSize.setText(newValue.getSize());
+        txtSupplier.setText(newValue.getSupplier());
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadDateAndTime();
@@ -134,7 +144,7 @@ public class LadiesProductAdminFormController implements Initializable {
         colSupplier.setCellValueFactory(new PropertyValueFactory<>("supplier"));
 
         tblLadiesProductsAdmin.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldValue, newValue) -> {
-            // TODO: Implement product details view
+            setTextToValue(newValue);
         }));
         loadTables();
     }
