@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -88,7 +89,14 @@ public class LadiesProductAdminFormController implements Initializable {
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
+        LadiesProduct ladiesProduct = service.searchLadiesProducts(txtId.getText());
+        setTextToValue(ladiesProduct);
 
+        if (ladiesProduct == null) {
+            new Alert(Alert.AlertType.INFORMATION, "Item not found").show();
+        } else {
+            new Alert(Alert.AlertType.INFORMATION, "Item found").show();
+        }
     }
 
     @FXML

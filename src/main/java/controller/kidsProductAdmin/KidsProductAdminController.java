@@ -49,4 +49,29 @@ public class KidsProductAdminController implements KidsProductAdminService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public KidsProduct searchKidsProducts(String id) {
+        String SQL = "SELECT * FROM kidsproducts WHERE ID = '" + id + "'";
+
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement psTm = connection.prepareStatement(SQL);
+            ResultSet resultSet = psTm.executeQuery();
+
+            while (resultSet.next()) {
+                return new KidsProduct(
+                        resultSet.getInt("ID"),
+                        resultSet.getString("Name"),
+                        resultSet.getString("Size"),
+                        resultSet.getInt("Quantity"),
+                        resultSet.getDouble("Price"),
+                        resultSet.getString("Supplier")
+                );
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
 }

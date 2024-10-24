@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -72,7 +73,21 @@ public class GentsProductAdminFormController implements Initializable {
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
+        GentsProducts gentsProducts = new GentsProducts(
+                Integer.parseInt(txtId.getText()),
+                txtName.getText(),
+                txtSize.getText(),
+                Integer.parseInt(txtQuantity.getText()),
+                Double.parseDouble(txtPrice.getText()),
+                txtSupplier.getText()
+        );
 
+        if (service.addGentsProduct(gentsProducts)) {
+            new Alert(Alert.AlertType.INFORMATION, "Item added successfully").show();
+            loadTables();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Failed to add item").show();
+        }
     }
 
     @FXML
@@ -87,7 +102,14 @@ public class GentsProductAdminFormController implements Initializable {
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
+        GentsProducts gentsProducts = service.searchGentsProducts(txtId.getText());
+        setTextToValue(gentsProducts);
 
+        if (gentsProducts == null) {
+            new Alert(Alert.AlertType.INFORMATION, "Item not found").show();
+        } else {
+            new Alert(Alert.AlertType.INFORMATION, "Item found").show();
+        }
     }
 
     @FXML

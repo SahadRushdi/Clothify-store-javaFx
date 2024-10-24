@@ -49,4 +49,29 @@ public class LadiesProductAdminController implements LadiesProductAdminService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public LadiesProduct searchLadiesProducts(String id) {
+        String SQL = "SELECT * FROM ladiesproducts WHERE ID = '" + id + "'";
+
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement psTm = connection.prepareStatement(SQL);
+            ResultSet resultSet = psTm.executeQuery();
+
+            while (resultSet.next()) {
+                return new LadiesProduct(
+                        resultSet.getInt("ID"),
+                        resultSet.getString("Name"),
+                        resultSet.getString("Size"),
+                        resultSet.getInt("Quantity"),
+                        resultSet.getDouble("Price"),
+                        resultSet.getString("Supplier")
+                );
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
 }
