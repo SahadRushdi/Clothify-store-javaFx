@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="633.0" prefWidth="1105.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WelcomePageFormController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="632.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Clothify%20Store%20Logo.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="634.0" fitWidth="477.0" layoutX="632.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Clothify%20Store%20Description.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="160.0" layoutY="511.0" onAction="#btnWelcomeOnAction" prefHeight="61.0" prefWidth="355.0" ripplerFill="BLACK" style="-fx-background-color: #D2B48C;" text="Welcome To Clothify Store">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -16,6 +16,8 @@ import java.sql.SQLException;
 public class GentsProductAdminController implements GentsProductAdminService {
 
     private static GentsProductAdminController instance;
+    public ObservableList getID;
+
     private GentsProductAdminController(){}
 
     public static GentsProductAdminController getInstance() {
@@ -130,4 +132,35 @@ public class GentsProductAdminController implements GentsProductAdminService {
         }
         return null;
     }
+
+    public ObservableList<String> getName() {
+        ObservableList<String> getDressIds = FXCollections.observableArrayList();
+        ObservableList<GentsProducts> all = getAll();
+
+        all.forEach(gentsProducts -> {
+            getDressIds.add(gentsProducts.getName());
+        });
+
+        return getDressIds;
+    }
+
+//    public ObservableList<String> getID() {
+//        ObservableList<String> IDs = FXCollections.observableArrayList();
+//        ObservableList<GentsProducts> gentsProducts = getAll();
+//
+//        try {
+//            String SQL = "SELECT ID FROM gentsproducts";
+//            Connection connection = DBConnection.getInstance().getConnection();
+//            PreparedStatement psTm = connection.prepareStatement(SQL);
+//            ResultSet resultSet = psTm.executeQuery();
+//
+//            while (resultSet.next()) {
+//                IDs.add(resultSet.getString("ID"));
+//            }
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//        return IDs;
+//    }
 }

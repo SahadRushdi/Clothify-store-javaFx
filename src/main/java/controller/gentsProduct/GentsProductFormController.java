@@ -1,5 +1,7 @@
 package controller.gentsProduct;
 
+import com.jfoenix.controls.JFXTextField;
+import controller.gentsProductAdmin.GentsProductAdminController;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -7,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -24,6 +27,11 @@ public class GentsProductFormController implements Initializable {
 
     public Text lblDate;
     public Text lblTime;
+    public ComboBox cmbDressCode;
+    public JFXTextField txtName;
+    public JFXTextField txtSize;
+    public JFXTextField txtPrice;
+    public JFXTextField txtQuantity;
     @FXML
     private TableColumn<?, ?> colId;
 
@@ -95,5 +103,12 @@ GentsProductService service = GentsProductController.getInstance();
         }));
         loadTables();
 
+    }
+
+    private void loadDressCode() {
+        cmbDressCode.setItems(GentsProductAdminController.getInstance().getName());
+    }
+
+    public void btnAddToCartOnAction(ActionEvent actionEvent) {
     }
 }

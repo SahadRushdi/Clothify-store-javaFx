@@ -35,7 +35,7 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="204.0" layoutY="133.0" onAction="#btnAdminLoginOnAction" prefHeight="66.0" prefWidth="223.0" style="-fx-background-color: #0652DD;" stylesheets="@../css/Table.css" text="Admin Login" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="204.0" layoutY="133.0" onAction="#btnAdminLoginOnAction" prefHeight="66.0" prefWidth="223.0" style="-fx-background-color: #0652DD;" stylesheets="@../css/Table.css" text="Admin Login" textFill="#f23131">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>

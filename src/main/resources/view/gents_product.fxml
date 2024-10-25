@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
@@ -14,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="446.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gentsProduct.GentsProductFormController">
+<AnchorPane prefHeight="624.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gentsProduct.GentsProductFormController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="83.0" stroke="BLACK" strokeType="INSIDE" width="837.0">
          <fill>
@@ -39,7 +41,7 @@
             <Font name="System Bold" size="28.0" />
          </font>
       </Label>
-      <TableView fx:id="tblGentsProducts" layoutX="20.0" layoutY="140.0" prefHeight="218.0" prefWidth="791.0" stylesheets="@../css/Table.css">
+      <TableView fx:id="tblGentsProducts" layoutX="22.0" layoutY="311.0" prefHeight="218.0" prefWidth="791.0" stylesheets="@../css/Table.css">
         <columns>
           <TableColumn fx:id="colId" prefWidth="96.0" text="ID" />
           <TableColumn fx:id="colName" prefWidth="200.7999725341797" text="Name" />
@@ -53,7 +55,7 @@
             <String fx:value="dashboard-colour2" />
          </styleClass>
       </TableView>
-      <JFXButton layoutX="324.0" layoutY="372.0" onAction="#btnReloadOnAction" prefHeight="58.0" prefWidth="189.0" stylesheets="@../css/Table.css" text="Reload">
+      <JFXButton layoutX="321.0" layoutY="545.0" onAction="#btnReloadOnAction" prefHeight="58.0" prefWidth="189.0" stylesheets="@../css/Table.css" text="Reload">
          <styleClass>
             <String fx:value="dashboard-colour2" />
             <String fx:value="btn" />
@@ -83,5 +85,38 @@
          </font>
       </Text>
       <Separator layoutX="400.0" layoutY="93.0" orientation="VERTICAL" prefHeight="40.0" prefWidth="32.0" />
+      <ComboBox fx:id="cmbDressCode" layoutX="31.0" layoutY="181.0" prefHeight="34.0" prefWidth="189.0" promptText="Dress ID" />
+      <JFXTextField fx:id="txtName" alignment="BOTTOM_CENTER" layoutX="241.0" layoutY="178.0" prefHeight="38.0" prefWidth="210.0" promptText="Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtSize" alignment="BOTTOM_CENTER" layoutX="461.0" layoutY="178.0" prefHeight="38.0" prefWidth="144.0" promptText="Size">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPrice" alignment="BOTTOM_CENTER" layoutX="637.0" layoutY="177.0" prefHeight="38.0" prefWidth="150.0" promptText="Price">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <Separator layoutX="605.0" layoutY="172.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="32.0" />
+      <Separator layoutX="441.0" layoutY="171.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="32.0" />
+      <JFXTextField fx:id="txtQuantity" alignment="BOTTOM_CENTER" layoutX="419.0" layoutY="247.0" prefHeight="38.0" prefWidth="188.0" promptText="Quantity">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton buttonType="RAISED" layoutX="640.0" layoutY="244.0" onAction="#btnAddToCartOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #26de81;" stylesheets="@../../../../../../Project%20Copy/Thogakade%20With%20MVC%20architecture/Thogakade-MVN-2024-08-12/src/main/resources/css/Table.css" text="Add To Cart" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <styleClass>
+            <String fx:value="dashboard-colour2" />
+            <String fx:value="btn" />
+         </styleClass>
+      </JFXButton>
+      <Separator layoutY="234.0" prefHeight="14.0" prefWidth="838.0" />
    </children>
 </AnchorPane>
