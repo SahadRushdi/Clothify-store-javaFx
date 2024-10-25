@@ -74,7 +74,21 @@ public class KidsProductAdminFormController implements Initializable {
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
+        KidsProduct kidsProduct = new KidsProduct(
+                Integer.parseInt(txtId.getText()),
+                txtName.getText(),
+                txtSize.getText(),
+                Integer.parseInt(txtQuantity.getText()),
+                Double.parseDouble(txtPrice.getText()),
+                txtSupplier.getText()
+        );
 
+        if (service.addkidsProducts(kidsProduct)) {
+            new Alert(Alert.AlertType.INFORMATION, "Item added successfully").show();
+            loadTables();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Failed to add item").show();
+        }
     }
 
     @FXML

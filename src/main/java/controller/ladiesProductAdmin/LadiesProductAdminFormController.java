@@ -14,7 +14,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-import model.GentsProducts;
 import model.LadiesProduct;
 
 import java.net.URL;
@@ -74,7 +73,21 @@ public class LadiesProductAdminFormController implements Initializable {
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
+        LadiesProduct ladiesProduct = new LadiesProduct(
+                Integer.parseInt(txtId.getText()),
+                txtName.getText(),
+                txtSize.getText(),
+                Integer.parseInt(txtQuantity.getText()),
+                Double.parseDouble(txtPrice.getText()),
+                txtSupplier.getText()
+        );
 
+        if (service.addLadiesProduct(ladiesProduct)) {
+            new Alert(Alert.AlertType.INFORMATION, "Item added successfully").show();
+            loadTables();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Failed to add item").show();
+        }
     }
 
     @FXML

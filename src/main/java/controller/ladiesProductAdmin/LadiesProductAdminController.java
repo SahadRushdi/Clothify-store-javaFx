@@ -3,6 +3,7 @@ package controller.ladiesProductAdmin;
 import db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 import model.LadiesProduct;
 
 import java.sql.Connection;
@@ -48,6 +49,27 @@ public class LadiesProductAdminController implements LadiesProductAdminService {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public boolean addLadiesProduct(LadiesProduct ladiesProduct) {
+        try {
+            String SQL = "INSERT INTO ladiesproducts VALUES (?,?,?,?,?,?)";
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement psTm = connection.prepareStatement(SQL);
+            psTm.setInt(1,ladiesProduct.getID());
+            psTm.setString(2, ladiesProduct.getName());
+            psTm.setString(3, ladiesProduct.getSize());
+            psTm.setInt(4, ladiesProduct.getQuantity());
+            psTm.setDouble(5, ladiesProduct.getPrice());
+            psTm.setString(6, ladiesProduct.getSupplier());
+
+            return psTm.executeUpdate()>0;
+
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR,"Error updating : "+e.getMessage()).show();
+        }
+        return false;
     }
 
     @Override

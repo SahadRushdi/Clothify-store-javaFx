@@ -4,6 +4,7 @@ import controller.kidsProduct.KidsProductController;
 import db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 import model.KidsProduct;
 
 import java.sql.Connection;
@@ -48,6 +49,27 @@ public class KidsProductAdminController implements KidsProductAdminService {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public boolean addkidsProducts(KidsProduct kidsProduct) {
+        try {
+            String SQL = "INSERT INTO kidsproducts VALUES (?,?,?,?,?,?)";
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement psTm = connection.prepareStatement(SQL);
+            psTm.setInt(1,kidsProduct.getID());
+            psTm.setString(2, kidsProduct.getName());
+            psTm.setString(3, kidsProduct.getSize());
+            psTm.setInt(4, kidsProduct.getQuantity());
+            psTm.setDouble(5, kidsProduct.getPrice());
+            psTm.setString(6, kidsProduct.getSupplier());
+
+            return psTm.executeUpdate()>0;
+
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR,"Error updating : "+e.getMessage()).show();
+        }
+        return false;
     }
 
     @Override

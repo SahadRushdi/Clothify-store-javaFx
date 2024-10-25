@@ -55,10 +55,9 @@ public class GentsProductAdminController implements GentsProductAdminService {
     @Override
     public boolean addGentsProduct(GentsProducts gentsProducts) {
         try {
-            String SQL = "INSERT INTO gentsproducts VALUES (?,?,?,?,?)";
+            String SQL = "INSERT INTO gentsproducts VALUES (?,?,?,?,?,?)";
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement psTm = connection.prepareStatement(SQL);
-//            psTm.setInt(1, gentsProducts.getId());
             psTm.setInt(1,gentsProducts.getID());
             psTm.setString(2, gentsProducts.getName());
             psTm.setString(3, gentsProducts.getSize());
