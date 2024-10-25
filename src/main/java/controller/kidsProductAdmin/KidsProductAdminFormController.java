@@ -14,7 +14,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-import model.GentsProducts;
 import model.KidsProduct;
 
 import java.net.URL;
@@ -93,7 +92,12 @@ public class KidsProductAdminFormController implements Initializable {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-
+        if (service.deletekidsProduct(txtId.getText())) {
+            new Alert(Alert.AlertType.INFORMATION, "Item deleted successfully").show();
+            loadTables();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Failed to delete item").show();
+        }
     }
 
     @FXML

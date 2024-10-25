@@ -92,7 +92,12 @@ public class GentsProductAdminFormController implements Initializable {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-
+        if (service.deleteGentsProduct(txtId.getText())) {
+        new Alert(Alert.AlertType.INFORMATION, "Item deleted successfully").show();
+            loadTables();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Failed to delete item").show();
+        }
     }
 
     @FXML

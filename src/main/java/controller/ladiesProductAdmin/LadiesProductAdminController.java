@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import model.LadiesProduct;
+import util.CrudUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -70,6 +71,17 @@ public class LadiesProductAdminController implements LadiesProductAdminService {
             new Alert(Alert.AlertType.ERROR,"Error updating : "+e.getMessage()).show();
         }
         return false;
+    }
+
+    @Override
+    public boolean deleteLadiesProduct(String id) {
+        try {
+            return CrudUtil.execute("DELETE FROM ladiesproducts WHERE ID=?", id);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
