@@ -85,6 +85,26 @@ public class KidsProductAdminController implements KidsProductAdminService {
     }
 
     @Override
+    public boolean updateKidsProduct(KidsProduct kidsProduct) {
+        String SQL = "UPDATE kidsproducts SET Name=?, Size=?, Quantity=?, Price=?, Supplier=? WHERE ID=?";
+        try {
+            return CrudUtil.execute(
+                    SQL,
+                    kidsProduct.getName(),
+                    kidsProduct.getSize(),
+                    kidsProduct.getQuantity(),
+                    kidsProduct.getPrice(),
+                    kidsProduct.getSupplier(),
+                    kidsProduct.getID()
+            );
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
     public KidsProduct searchKidsProducts(String id) {
         String SQL = "SELECT * FROM kidsproducts WHERE ID = '" + id + "'";
 

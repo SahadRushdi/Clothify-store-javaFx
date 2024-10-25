@@ -85,6 +85,26 @@ public class LadiesProductAdminController implements LadiesProductAdminService {
     }
 
     @Override
+    public boolean updateLadiesProduct(LadiesProduct ladiesProduct) {
+        String SQL = "UPDATE ladiesproducts SET Name=?, Size=?, Quantity=?, Price=?, Supplier=? WHERE ID=?";
+        try {
+            return CrudUtil.execute(
+                    SQL,
+                    ladiesProduct.getName(),
+                    ladiesProduct.getSize(),
+                    ladiesProduct.getQuantity(),
+                    ladiesProduct.getPrice(),
+                    ladiesProduct.getSupplier(),
+                    ladiesProduct.getID()
+            );
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
     public LadiesProduct searchLadiesProducts(String id) {
         String SQL = "SELECT * FROM ladiesproducts WHERE ID = '" + id + "'";
 

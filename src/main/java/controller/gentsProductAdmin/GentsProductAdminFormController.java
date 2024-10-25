@@ -119,7 +119,21 @@ public class GentsProductAdminFormController implements Initializable {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        GentsProducts gentsProducts = new GentsProducts(
+                Integer.parseInt(txtId.getText()),
+                txtName.getText(),
+                txtSize.getText(),
+                Integer.parseInt(txtQuantity.getText()),
+                Double.parseDouble(txtPrice.getText()),
+                txtSupplier.getText()
+        );
 
+        if (service.updateGentsProduct(gentsProducts)) {
+            new Alert(Alert.AlertType.INFORMATION, "Item updated successfully").show();
+            loadTables();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Failed to update item").show();
+        }
     }
 
     private void loadDateAndTime() {

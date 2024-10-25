@@ -14,6 +14,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
+import model.GentsProducts;
 import model.KidsProduct;
 
 import java.net.URL;
@@ -119,7 +120,21 @@ public class KidsProductAdminFormController implements Initializable {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        KidsProduct kidsProduct = new KidsProduct(
+                Integer.parseInt(txtId.getText()),
+                txtName.getText(),
+                txtSize.getText(),
+                Integer.parseInt(txtQuantity.getText()),
+                Double.parseDouble(txtPrice.getText()),
+                txtSupplier.getText()
+        );
 
+        if (service.updateKidsProduct(kidsProduct)) {
+            new Alert(Alert.AlertType.INFORMATION, "Item updated successfully").show();
+            loadTables();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Failed to update item").show();
+        }
     }
 
     private void loadTables() {

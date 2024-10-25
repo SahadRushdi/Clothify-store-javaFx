@@ -86,6 +86,27 @@ public class GentsProductAdminController implements GentsProductAdminService {
     }
 
     @Override
+    public boolean updateGentsProduct(GentsProducts gentsProducts) {
+        String SQL = "UPDATE gentsproducts SET Name=?, Size=?, Quantity=?, Price=?, Supplier=? WHERE ID=?";
+        try {
+            return CrudUtil.execute(
+                    SQL,
+                    gentsProducts.getName(),
+                    gentsProducts.getSize(),
+                    gentsProducts.getQuantity(),
+                    gentsProducts.getPrice(),
+                    gentsProducts.getSupplier(),
+                    gentsProducts.getID()
+            );
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    @Override
     public GentsProducts searchGentsProducts(String id) {
         String SQL = "SELECT * FROM gentsproducts WHERE ID = '" + id + "'";
 
