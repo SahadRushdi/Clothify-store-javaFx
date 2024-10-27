@@ -2,43 +2,16 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import java.lang.String?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.RadialGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DressSelectionFormAdminController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane prefHeight="446.0" prefWidth="742.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="85.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
-               <fill>
-                  <RadialGradient centerX="0.5530972944951691" centerY="0.5113636797124689" focusDistance="-0.018348606354599672" radius="0.6697247793915075">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.7463170886039734" green="0.10530214756727219" blue="0.7684210538864136" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.2781052589416504" green="0.15368421375751495" blue="0.5684210658073425" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </RadialGradient>
-               </fill>
-            </Rectangle>
-            <Label layoutX="168.0" layoutY="19.0" prefHeight="46.0" prefWidth="263.0" text="Product Management" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-            </Label>
-            <JFXButton layoutX="194.0" layoutY="208.0" onAction="#btnGentsProductsOnAction" prefHeight="58.0" prefWidth="212.0" stylesheets="@../../css/Table.css" text="Gents Products">
+            <JFXButton layoutX="490.0" layoutY="196.0" onAction="#btnGentsProductsOnAction" prefHeight="58.0" prefWidth="212.0" style="-fx-background-color: #895129;" stylesheets="@../../css/Table.css" text="Gents Products">
                <styleClass>
                   <String fx:value="dashboard-colour2" />
                   <String fx:value="btn" />
@@ -47,7 +20,7 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="194.0" layoutY="296.0" onAction="#btnKidsProductsOnAction" prefHeight="58.0" prefWidth="212.0" stylesheets="@../../css/Table.css" text="Kids Products">
+            <JFXButton layoutX="490.0" layoutY="284.0" onAction="#btnKidsProductsOnAction" prefHeight="58.0" prefWidth="212.0" style="-fx-background-color: #895129;" stylesheets="@../../css/Table.css" text="Kids Products">
                <styleClass>
                   <String fx:value="dashboard-colour2" />
                   <String fx:value="btn" />
@@ -56,7 +29,7 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="194.0" layoutY="115.0" onAction="#btnLadiesProductsOnAction" prefHeight="58.0" prefWidth="212.0" stylesheets="@../../css/Table.css" text="Ladies Products">
+            <JFXButton layoutX="490.0" layoutY="103.0" onAction="#btnLadiesProductsOnAction" prefHeight="58.0" prefWidth="212.0" style="-fx-background-color: #895129;" stylesheets="@../../css/Table.css" text="Ladies Products">
                <styleClass>
                   <String fx:value="dashboard-colour2" />
                   <String fx:value="btn" />
@@ -65,6 +38,11 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </JFXButton>
+            <ImageView fitHeight="551.0" fitWidth="446.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/Product%20Management.jpg" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
